@@ -52,7 +52,7 @@ namespace AadModernization.Controllers
 
         }
 
-        [Authorize]
+        [Authorize(Roles = "66c4b216-69d4-4443-82a0-71eadc422412"]
         public ActionResult Claims()
         {
 
