@@ -27,3 +27,10 @@ In this branch, we're using roles from our existing membership or authorization 
 - Add `AuthorizeErrorAttribute`, which redirects to an error page if the user is not in a role specified for the action. Otherwise we end up in a redirect loop.
 - Add an error page for showing arbitrary error messages.
 - Add an `AuthenticationFailed` notification handler for openid.
+
+## aad-resolve-group-names
+Permissions required: `openid profile` (e.g., `https://graph.microsoft.com/User.Read`), `https://graph.microsoft.com/Directory.Read.All` :warning:
+Back to our groups, if we get guids and want to resolve them to actual names, we need to do that via the graph. Until the new preview features arrived to send samAccountName in the claimset, this was an option to prevent modifying code from group name to aad group guid. 
+- Since we need to query the graph for group names, our app needs more permissions to accomplish this. While `Groups.Read.All` seems to make sense on the surface, it actually grants access to significantly more than you'd expect - not only is it group metadata, it's data _within_ those groups. We'll use `Directory.Read.All` here, although that's still a lot of access. Our next iteration will address this.
+- Once we've added the permission, we need to change our grant type to include an authorization_code, then swap that code for an access token. We're going to use it immediately so no need to worry about caching.
+- We'll also need to add a client secret or certificate to our app to authenticate during the authorization_code callback. Azure offers a few different ways to store secrets - check out KeyVault and Managed Service Identity before putting a secret in your configuration files. 
