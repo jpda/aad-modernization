@@ -36,15 +36,6 @@ namespace AadModernization
                     TokenValidationParameters = new TokenValidationParameters()
                     {
                         NameClaimType = "preferred_username"
-                    },
-                    Notifications = new OpenIdConnectAuthenticationNotifications
-                    {
-                        SecurityTokenValidated = ctx =>
-                        {
-                            ctx.AuthenticationTicket.Identity.AddClaim(new Claim("myclaimtype", "value"));
-                            ctx.AuthenticationTicket.Identity.AddClaim(new Claim(ClaimTypes.Role, "IsAdmin"));
-                            return Task.FromResult(0);
-                        }
                     }
                 }
             );
