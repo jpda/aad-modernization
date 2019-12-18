@@ -9,9 +9,10 @@ using System.Web.Mvc;
 
 namespace AadModernization.Controllers
 {
-    [AllowAnonymous]
+
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             var xon = ConfigurationManager.ConnectionStrings["BrutusConnectionString"];
@@ -20,7 +21,7 @@ namespace AadModernization.Controllers
                 UpdateStatus(false, "hmmm...");
                 return View(new List<NYCCallData>());
             }
-            
+
             try
             {
                 var bdb = new BrutusDataContext();
@@ -48,18 +49,19 @@ namespace AadModernization.Controllers
 
             ViewBag.ConnectionString = "Not connected!";
             ViewBag.StatusClass = "bg-Red";
-            
+
         }
 
         [Authorize]
         public ActionResult Claims()
         {
-            
+
             ViewBag.Message = "Your application description page.";
 
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
