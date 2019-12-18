@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Claims";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<style type="text/css">
+    .table th {
+        font-weight: 700;
+        font-family: "Segoe UI", "Helvetica Neue";
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+    }
+
+    .jumbotron {
+        background: none;
+        color: white;
+    }
+
+    .navbar.navbar-inverse {
+        margin-bottom: 0;
+    }
+</style>
+
+<div class="@(Request.IsAuthenticated ? "bg-Green" : "bg-Red")">
+    <div class="container jumbotron">
+        <h1>Hey there @User.Identity.Name!</h1>
+        <p class="lead">hello</p>
+    </div>
+</div>
+
+<div class="bg-Cyan">
+    <div class="container" style="padding: 10px 48px;">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (System.Security.Claims.Claim c in ((System.Security.Claims.ClaimsPrincipal)User).Claims)
+                        {
+                            <tr>
+                                <td>@c.Type</td>
+                                <td>@c.Value</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,440 @@
+﻿body {
+    /*padding-top: 50px;*/
+    padding-bottom: 20px;
+    font-family: "Segoe UI", "Helvetica Neue";
+    overflow: auto;
+    background-color: #333;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column */
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: "Segoe UI", "Helvetica Neue";
+    font-weight: lighter;
+    letter-spacing: -0.05em;
+}
+
+h4, h5, h6, .h4, .h5, .h6 {
+    font-weight: 700;
+    font-family: "Segoe UI", "Helvetica Neue";
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+}
+
+.feature {
+    padding: 30px 0;
+    padding-bottom: 0;
+}
+
+.btn {
+    border-radius: 0;
+}
+
+/*#region table*/
+.table thead > tr > td {
+    font-weight: 700;
+    font-family: "Segoe UI", "Helvetica Neue";
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.semibold {
+    font-weight: 700;
+    font-family: "Segoe UI", "Helvetica Neue";
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+div.col-md-12 table {
+    display: none;
+}
+
+div.col-md-12 h2 {
+    cursor: pointer;
+}
+
+    div.col-md-12 h2:hover {
+        color: #8a8a8a;
+    }
+
+/*#endregion*/
+
+/*#region styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/*#endregion*/
+
+/*#region colors*/
+
+.no-color {
+    background-color: white;
+    border-style: none;
+}
+
+.bg-Lime {
+    background-color: #A4C400;
+}
+
+.bg-Green {
+    background-color: #60A917;
+}
+
+.bg-Emerald {
+    background-color: #008A00;
+}
+
+.bg-Teal {
+    background-color: #00ABA9;
+}
+
+.bg-Cyan {
+    background-color: #1BA1E2;
+}
+
+.bg-Cobalt {
+    background-color: #0050EF;
+}
+
+.bg-Indigo {
+    background-color: #6A00FF;
+}
+
+.bg-Violet {
+    background-color: #AA00FF;
+}
+
+.bg-Pink {
+    background-color: #F472D0;
+}
+
+.bg-Magenta {
+    background-color: #D80073;
+}
+
+.bg-Crimson {
+    background-color: #A20025;
+}
+
+.bg-Red {
+    background-color: #E51400;
+}
+
+.bg-Orange {
+    background-color: #FA6800;
+}
+
+.bg-Amber {
+    background-color: #F0A30A;
+}
+
+.bg-Yellow {
+    background-color: #E3C800;
+}
+
+.bg-Brown {
+    background-color: #825A2C;
+}
+
+.bg-Olive {
+    background-color: #6D8764;
+}
+
+.bg-Steel {
+    background-color: #647687;
+}
+
+.bg-Mauve {
+    background-color: #76608A;
+}
+
+.bg-Taupe {
+    background-color: #87794E;
+}
+
+.bg-white {
+    background-color: #fff;
+}
+
+/*#endregion*/
+
+/*#region side and vertical padding*/
+
+.sidePadding5 {
+    padding: 0 5px;
+}
+
+.sidePadding10 {
+    padding: 0 10px;
+}
+
+.sidePadding15 {
+    padding: 0 15px;
+}
+
+.sidePadding20 {
+    padding: 0 20px;
+}
+
+.sidePadding30 {
+    padding: 0 30px;
+}
+
+.sidePadding40 {
+    padding: 0 40px;
+}
+
+.sidePadding80 {
+    padding: 0 80px;
+}
+
+.verticalPadding5 {
+    padding: 5px 0;
+}
+
+.verticalPadding10 {
+    padding: 10px 0;
+}
+
+.verticalPadding15 {
+    padding: 15px 0;
+}
+
+.verticalPadding20 {
+    padding: 20px 0;
+}
+
+.verticalPadding30 {
+    padding: 30px 0;
+}
+
+.verticalPadding40 {
+    padding: 40px 0;
+}
+
+.verticalPadding80 {
+    padding: 80px 0;
+}
+
+/*#endregion*/
+
+/*#region navbar*/
+.navbar {
+    box-shadow: none;
+    border: none;
+}
+
+.navbar-inverse {
+    background: #333;
+}
+
+.navbar-static-top,
+.navbar-fixed-top,
+.navbar-fixed-bottom,
+.nav,
+.navbar,
+.navbar-wrapper .navbar {
+    border-radius: 0;
+}
+
+.navbar-inverse .nav > .active > a {
+    background-color: #222222;
+}
+
+.navbar-inverse .nav > li > a {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.navbar-inverse .nav > .active > a, .navbar-inverse .nav > .active > a:hover, .navbar-inverse .nav > .active > a:focus {
+    color: #ffffff;
+}
+
+.navbar-inverse .nav > li > a {
+    color: #999;
+}
+
+/*#endregion*/
+
+/*#region home*/
+
+.carousel-inner, .carousel-inner > .item, .carousel-inner > .item > a {
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.convo {
+    max-height: 200px;
+    min-height: 200px;
+    /*position: relative;
+    max-width: 20%;
+    margin-top: -30%;*/
+    overflow: hidden;
+}
+
+.convo-response {
+    max-width: 100%;
+    height: auto;
+    margin-top: 175px;
+    width: 45%;
+    display: none;
+}
+
+.convo .cr-right {
+    float: right;
+}
+
+.overflow-image {
+    max-height: 500px;
+    overflow: hidden;
+}
+
+/*#endregion*/
+
+/*#region pricing*/
+
+h1.super-header {
+    font-size: 4em;
+    margin-bottom: 20px;
+}
+
+.priceBox {
+    text-align: center;
+}
+
+    .priceBox > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+.mega-size {
+    font-size: 6em;
+}
+
+/*#endregion*/
+
+/*#region footer*/
+html,
+body {
+    height: 100%;
+}
+
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -37px;
+}
+
+#push,
+#footer {
+    min-height: 60px;
+}
+
+    #footer .container {
+        background-color: #333;
+    }
+
+@media (max-width: 767px) {
+    #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 100%;
+    }
+}
+
+/*#endregion*/
+
+/*#region controls*/
+.form-control {
+    -ms-border-radius: 0;
+    border-radius: 0;
+}
+
+a {
+    outline: 0 !important;
+}
+
+@-ms-viewport {
+    width: auto !important;
+}
+
+@media (max-width:768px) {
+    .convo-response {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .convo {
+        max-height: 400px;
+        min-height: 400px;
+    }
+
+    .carousel-caption {
+        position: relative;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+
+    .right.carousel-control, .left.carousel-control {
+        /*display: none;*/
+        background-image: none;
+        background: none;
+        filter: none;
+    }
+}
+
+/*#endregion*/
+
+@media (max-width: 479px) {
+    .convo {
+        max-height: 250px;
+        min-height: 250px;
+    }
+}

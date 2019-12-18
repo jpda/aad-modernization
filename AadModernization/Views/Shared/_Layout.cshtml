@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Azure SQL App</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link type="text/css" rel="stylesheet" href="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.css" />
+    <script type="text/javascript">
+        var appInsights = window.appInsights || function (config) {
+            function s(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, r = document, f = window, e = "script", o = r.createElement(e), i, u; for (o.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", r.getElementsByTagName(e)[0].parentNode.appendChild(o), t.cookie = r.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;) s("track" + i.pop()); return config.disableExceptionTracking || (i = "onerror", s("_" + i), u = f[i], f[i] = function (config, r, f, e, o) { var s = u && u(config, r, f, e, o); return s !== !0 && t["_" + i](config, r, f, e, o), s }), t
+        }({
+            instrumentationKey: "145fa2d7-89d6-49c5-91dd-f680b9726621"
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("Data", "Index", "Home", null, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Claims", "Claims", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </nav>
+            </div>
+        </div>
+        @RenderBody()
+        <div id="push"></div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <footer>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h3 class="text-muted">Get Around.</h3>
+                        <div class="navbar navbar-inverse">
+                            <ul class="nav nav-stacked">
+                                <li class="active"><a href="/">Home</a></li>
+                                @*@Html.Partial("_LoginPartial")*@
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-muted">Connect.</h3>
+                        <div class="navbar navbar-inverse">
+                            <ul class="nav nav-stacked">
+                                <li><a href="mailto:jdandison@cardinalsolutions.com"><span class="glyphicon glyphicon-envelope"></span>&nbsp;mail</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h3 class="text-muted">Get in touch.</h3>
+                        <div class="navbar navbar-inverse">
+                            <ul class="nav nav-stacked">
+                                <li><a href="mailto:jdandison@cardinalsolutions.com"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Email us</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-muted"><small>&copy; @DateTime.Now.Year - jpd.ms</small></p>
+            </footer>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script type="text/javascript" src="//cdn.datatables.net/1.10.3/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/plug-ins/a5734b29083/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

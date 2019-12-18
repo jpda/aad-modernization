@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BrutusApp" Class="BrutusDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=BrutusApp;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BrutusConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.NYCCallData" Member="NYCCallDatas">
+    <Type Name="NYCCallData">
+      <Column Name="Unique_Key" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Created_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Closed_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Agency" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Agency_Name" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Complaint_Type" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Descriptor" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Location_Type" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Incident_Zip" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Incident_Address" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Street_Name" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Cross_Street_1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Cross_Street_2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Intersection_Street_1" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Intersection_Street_2" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Address_Type" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Landmark" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Facility_Type" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Due_Date" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Resolution_Description" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Resolution_Action_Updated_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Community_Board" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="BBL" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Borough" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="X_Coordinate__State_Plane_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Y_Coordinate__State_Plane_" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Open_Data_Channel_Type" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Park_Facility_Name" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Park_Borough" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Vehicle_Type" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Taxi_Company_Borough" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Taxi_Pick_Up_Location" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Bridge_Highway_Name" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Bridge_Highway_Direction" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Road_Ramp" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Bridge_Highway_Segment" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

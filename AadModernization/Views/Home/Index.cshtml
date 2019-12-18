@@ -1,0 +1,67 @@
+﻿@model IEnumerable<NYCCallData>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<style type="text/css">
+    .table th {
+        font-weight: 700;
+        font-family: "Segoe UI", "Helvetica Neue";
+        text-transform: uppercase;
+        letter-spacing: -0.05em;
+    }
+
+    .jumbotron {
+        background: none;
+        color: white;
+    }
+
+    .navbar.navbar-inverse { margin-bottom: 0; }
+</style>
+
+<div class="@ViewBag.StatusClass">
+    <div class="container jumbotron">
+        <h1>@ViewBag.StatusMessage</h1>
+        <p class="lead">Current SQL Connection: @ViewBag.ConnectionString</p>
+    </div>
+</div>
+
+<div class="bg-Cyan">
+    <div class="container" style="padding: 10px 48px;">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Agency</th>
+                            <th>Created</th>
+                            <th>Complaint Type</th>
+                            <th>Borough</th>
+                            <th>Descriptor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var x in Model)
+                        {
+                            <tr>
+                                <td>@x.Agency</td>
+                                <td>@x.Created_Date</td>
+                                <td>@x.Complaint_Type</td>
+                                <td>@x.Borough</td>
+                                <td>@x.Descriptor</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+@section scripts {
+    <script type="text/javascript">
+        $(function () {
+            $(".table").DataTable();
+        });
+    </script>
+}
