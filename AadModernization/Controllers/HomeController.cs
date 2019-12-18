@@ -13,7 +13,7 @@ namespace AadModernization.Controllers
     public class HomeController : Controller
     {
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Index(string e = "")
         {
             var xon = ConfigurationManager.ConnectionStrings["BrutusConnectionString"];
             if (xon == null) //missing xon string
@@ -52,7 +52,7 @@ namespace AadModernization.Controllers
 
         }
 
-        [Authorize(Roles = "66c4b216-69d4-4443-82a0-71eadc422412"]
+        [AuthorizeError(Roles = "SystemUser")]
         public ActionResult Claims()
         {
 
@@ -61,11 +61,24 @@ namespace AadModernization.Controllers
             return View();
         }
 
-        [AllowAnonymous]
-        public ActionResult Contact()
+        [AuthorizeError(Roles = "AdministrativeUser")]
+        public ActionResult Admin()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your application description page.";
+            return View("Claims");
+        }
 
+        [AuthorizeError(Roles = "AnEmptyGroup")]
+        public ActionResult AnEmptyGroup()
+        {
+            ViewBag.Message = "Your application description page.";
+            return View("Claims");
+        }
+
+        [AllowAnonymous]
+        public ActionResult Error(string e = "")
+        {
+            ViewBag.Message = e;
             return View();
         }
     }

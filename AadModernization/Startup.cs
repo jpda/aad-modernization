@@ -36,6 +36,22 @@ namespace AadModernization
                     TokenValidationParameters = new TokenValidationParameters()
                     {
                         NameClaimType = "preferred_username"
+                    },
+                    Notifications = new OpenIdConnectAuthenticationNotifications()
+                    {
+                        SecurityTokenValidated = ctx =>
+                        {
+                            // here we could query a database, e.g., your existing authorization database. we can also add multiple here
+                            ctx.AuthenticationTicket.Identity.AddClaim(new Claim(ClaimTypes.Role, "AdministrativeUser"));
+                            ctx.AuthenticationTicket.Identity.AddClaim(new Claim(ClaimTypes.Role, "SystemUser"));
+                            return Task.FromResult(0);
+                        },
+                        AuthenticationFailed = ctx =>
+                        {
+                            ctx.HandleResponse();
+                            ctx.Response.Redirect("/home/error?e=" + ctx.Exception.Message);
+                            return Task.FromResult(0);
+                        }
                     }
                 }
             );
