@@ -13,7 +13,7 @@ namespace AadModernization
         {
             if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
             {
-                base.OnAuthorization(filterContext);
+                base.HandleUnauthorizedRequest(filterContext);
                 return;
             }
             else if (!Roles.Split(',').Any(x => filterContext.HttpContext.User.IsInRole(x)))
