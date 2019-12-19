@@ -82,4 +82,4 @@ In this branch, we've pushed the balance of work over to the teams that manage A
 ]
 ```
 
-![assign groups from the ent apps blade]("assets/00-assign-roles.png")
+![assign groups from the ent apps blade](assets/00-assign-roles.png)
